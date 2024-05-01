@@ -39,12 +39,16 @@ object registroProduccion {
 		return registro.sum()
 	}
 	
+	method primerValorDeProduccion(){
+		return registro.first()
+	}
+	
 	method ultimoValorDeProduccion(){
 		return registro.last()
 	}
 	
 	method cantidadProduccionesMayorALaPrimera(){
-		return registro.count({n => n > registro.first()})
+		return registro.count({n => n > self.primerValorDeProduccion()})
 	}
 	
 }
